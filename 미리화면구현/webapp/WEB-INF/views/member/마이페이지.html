@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery 라이브러리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 부트스트랩에서 제공하고 있는 스타일 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- 부트스트랩에서 제공하고 있는 스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- 이쪽에 메뉴바 포함 할꺼임 -->
+    <jsp:include page=""/>
+
+    <div class="content">
+       <br><br>
+       <div class="innerOuter">
+           <h2>마이페이지</h2>
+           <br>
+
+           <form action="update.me" method="post">
+               <div class="form-group">
+                   <label for="userId">* ID :</label>
+                   <input type="text" class="form-control" id="userId" name="" value="" readonly><br>
+                   
+                   <label for="userName">* Name :</label>
+                   <input type="text" class="form-control" id="userName" name="" value="" readonly><br>
+                   
+                   <label for="email"> &nbsp; Email :</label>
+                   <input type="email" class="form-control" id="email" name="" value=""><br>
+                   
+                   <label for="age"> &nbsp; Age :</label>
+                   <input type="number" class="form-control" id="age" name="" value=""><br>
+                   
+                   <label for="phone"> &nbsp; Phone :</label>
+                   <input type="tel" class="form-control" id="phone" name="" value=""><br>
+                   
+                   <label for="address"> &nbsp; Address :</label>
+                   <input type="text" class="form-control" id="address" name="" value=""><br>
+                   
+                   <label for=""> &nbsp; Gender : </label> &nbsp;&nbsp;
+                   <input type="radio" name="" id="Male" value="M">
+                   <label for="Male">남자</label> &nbsp;&nbsp;
+                   <input type="radio" name="" id="Female" value="F">
+                   <label for="Female">여자</label><br>
+                   
+                   
+               </div>
+               <br>
+               <div class="btns" align="center">
+                   <button type="submit" class="btn btn-primary">수정하기</button>
+                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteForm">회원탈퇴</button>
+               </div>
+           </form>
+
+       </div>
+       <br><br>
+   </div>
+
+   <!-- 회원탈퇴 버튼 클릭시 보여질 Modal -->
+   <div class="modal" id="deleteForm">
+       <div class="modal-dialog">
+           <div class="modal-content">
+           
+               <!-- Modal Header -->
+               <div class="modal-header">
+               <h4 class="modal-title">회원탈퇴</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               
+               <!-- Modal body -->
+               <div class="modal-body" align="center">
+               
+                   <b>
+                                   탈퇴 후 복구가 불가능합니다. <br>   
+                                   정말로 탈퇴 하시겠습니까?
+                   </b>
+
+                   <form action="" method="post">
+                           비밀번호 : 
+                       <input type="password" name="userPwd" required>
+                       <button type="submit" class="btn btn-danger">탈퇴하기</button>
+                   </form>
+
+               </div>
+               
+           </div>
+       </div>
+   </div>
+
+   <!-- 이쪽에 푸터바 포함할꺼임 -->
+   <jsp:include page=""/>
+    
+</body>
+</html>
